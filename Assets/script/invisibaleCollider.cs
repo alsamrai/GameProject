@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class invisibaleCollider : MonoBehaviour {
 
-	//public GameObject explosion;
+	//once the ball touch this object it will rest the game 
 	private player gameController;
 
 	void OnTriggerEnter(Collider other)

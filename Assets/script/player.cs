@@ -17,7 +17,9 @@ public class player : MonoBehaviour {
 		count = 0;
 		SetCountText ();
 	}
-
+	/*
+	 * Move Player method  
+	 */
 	void FixedUpdate ()
 	{
 		float moveHorizontal = Input.GetAxis ("Horizontal");
@@ -28,6 +30,9 @@ public class player : MonoBehaviour {
 	}
 
 	/* 
+	 *  Ontrigger method is using collider object as parameter... 
+	 * it collides either pick up an object and count your score 
+	 * or end point an object
 	*/
 	void OnTriggerEnter ( Collider other) 
 	{
