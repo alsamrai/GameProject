@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-public class player : MonoBehaviour {
+public class player2 : MonoBehaviour {
 
 	public float speed;
 	public Text countText;
@@ -18,15 +18,22 @@ public class player : MonoBehaviour {
 		SetCountText ();
 	}
 	/*
-	 * Move Player method  
+	 * Move Player2 method with i,j,l,k keys control  
 	 */
 	void FixedUpdate ()
 	{
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-		rb.AddForce (movement * speed);
+		float hor = 0;
+		float ver = 0;
+		if (Input.GetKey ("j"))
+			hor = -1;
+		if (Input.GetKey ("l"))
+			hor = 1;
+		if (Input.GetKey ("i"))
+			ver = 1;
+		if (Input.GetKey ("k"))
+			ver = -1;
+		Vector3 vel = new Vector3 (hor, 0, ver);
+		rb.position+= vel * speed*Time.deltaTime;
 	}
 
 	/* 
