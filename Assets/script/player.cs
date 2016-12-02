@@ -6,15 +6,18 @@ public class player : MonoBehaviour {
 	public float speed;
 	public Text countText;
 	public Text WinText;
+	public GUIText finalScore;
 
 	private Rigidbody rb;
 	private int count;
+
 
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
 		WinText.text = "";
 		count = 0;
+		finalScore.text ="";
 		SetCountText ();
 	}
 	/*
@@ -40,6 +43,9 @@ public class player : MonoBehaviour {
 		{
 			other.gameObject.SetActive (false);
 			WinText.text = "You Win!";
+			finalScore.text = "Your Score: " + count.ToString();
+			Destroy (other.gameObject);
+			Destroy (gameObject);
 		}
 		if (other.gameObject.CompareTag ("PickUp")) {
 			other.gameObject.SetActive (false);
@@ -50,7 +56,7 @@ public class player : MonoBehaviour {
 		
 	void SetCountText()
 	{
-		countText.text = "Coint: " + count.ToString ();			
+		countText.text = "Player1 Score: " + count.ToString ();			
 	}
 		
 } 

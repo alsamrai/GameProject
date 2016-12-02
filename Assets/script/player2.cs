@@ -6,6 +6,7 @@ public class player2 : MonoBehaviour {
 	public float speed;
 	public Text countText;
 	public Text WinText;
+	public GUIText finalScore;
 
 	private Rigidbody rb;
 	private int count;
@@ -16,6 +17,7 @@ public class player2 : MonoBehaviour {
 		WinText.text = "";
 		count = 0;
 		SetCountText ();
+		finalScore.text ="";
 	}
 	/*
 	 * Move Player2 method with i,j,l,k keys control  
@@ -47,6 +49,7 @@ public class player2 : MonoBehaviour {
 		{
 			other.gameObject.SetActive (false);
 			WinText.text = "You Win!";
+			finalScore.text = "Your Score is: " + count.ToString();
 		}
 		if (other.gameObject.CompareTag ("PickUp")) {
 			other.gameObject.SetActive (false);
@@ -57,7 +60,7 @@ public class player2 : MonoBehaviour {
 		
 	void SetCountText()
 	{
-		countText.text = "Coint: " + count.ToString ();			
+		countText.text = "Player2 Score: " + count.ToString ();			
 	}
 		
 } 

@@ -9,6 +9,7 @@ public class invisibaleCollider : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		
 			SceneManager.LoadScene ("GameProject");
 	}	
 }
